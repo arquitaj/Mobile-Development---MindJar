@@ -95,7 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             app:cardCornerRadius="8dp"
-            app:cardBackgroundColor="#FFDAB8"
+            app:cardBackgroundColor="#F4FCD9"
             app:cardUseCompatPadding="true"
             app:layout_constraintTop_toBottomOf="@id/textView1"
             app:layout_constraintStart_toStartOf="@id/verticalConstraint1"
@@ -144,7 +144,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             app:cardCornerRadius="8dp"
-
+            app:cardBackgroundColor="#FFDAB8"
             app:cardUseCompatPadding="true"
             app:layout_constraintTop_toBottomOf="@id/cardContent1"
             app:layout_constraintStart_toStartOf="@id/verticalConstraint1"
