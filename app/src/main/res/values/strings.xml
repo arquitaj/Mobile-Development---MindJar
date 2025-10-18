@@ -1,5 +1,110 @@
-<resources>
-    <string name="app_name">My Application</string>
-    <!-- TODO: Remove or change this placeholder text -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="TypographyDashes,Typos">
+
+    <string name="app_name">MINDJAR</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Dashboard labels -->
+    <string name="label_home">Home</string>
+    <string name="label_realization">Realization</string>
+    <string name="label_hope">Hope</string>
+    <string name="label_videos">Videos</string>
+    <string name="label_hotline">Hotline</string>
+
+    <!-- Content descriptions for icons -->
+    <string name="cd_home_icon">Open Home</string>
+    <string name="cd_realization_icon">Open Realization</string>
+    <string name="cd_hope_icon">Open Hope</string>
+    <string name="cd_videos_icon">Open Videos</string>
+    <string name="cd_hotline_icon">Open Hotline</string>
+
+    <!-- HOME -->
+    <string name="home_welcome_user">Welcome User</string>
+    <string name="home_feeling_question">How are you feeling today?</string>
+    <string name="label_happy">Happy</string>
+    <string name="label_sad">Sad</string>
+    <string name="label_pressured">Pressured</string>
+    <string name="label_angry">Angry</string>
+    <string name="home_add_your_feelings">Add your feelings to your MindJar</string>
+    <string name="home_feeling_hint">I am feeling......</string>
+    <string name="home_send">Send</string>
+
+    <!-- HOPE -->
+    <string name="hope_header">Words of Hope</string>
+    <string name="hope_caption">"Take a deep breath, read slowly, and carry this light with you today."</string>
+
+    <!-- REALIZATION -->
+    <string name="realization_header">Realization</string>
+    <string name="realization_calendar">Calendar</string>
+    <string name="realization_my_journey">My Journey</string>
+    <string name="realization_weekly_inspiration">Weekly Inspiration</string>
+    <string name="realization_card1_title">Today – Feeling Happy</string>
+    <string name="realization_card1_body">Let your happiness fill the room today. Share a smile, a laugh, and the joy you feel with those around you.</string>
+    <string name="realization_card2_title">Thursday – Feeling Grateful</string>
+    <string name="realization_card2_body">Pause for a moment and appreciate the good in your life. Your gratitude today is a magnet for more blessings tomorrow.</string>
+    <string name="realization_card3_title">Wednesday – Feeling Worried</string>
+    <string name="realization_card3_body">Your mind is just rehearsing for the future. Take a deep breath and focus on what\'s within your control right now. You\'ve got this.</string>
+    <string name="realization_card4_title">Tuesday – Feeling Loved</string>
+    <string name="realization_card4_body">Open your heart to the love that surrounds you. Give a little back and watch how it grows even more.</string>
+
+    <!-- HOTLINE -->
+    <string name="hotline_header">Hotline</string>
+    <string name="hotline_caption">“If you ever feel overwhelmed, remember that reaching out is a sign of strength, not weakness. You are not alone—help is just one call away.”</string>
+    <string name="hotline_ncmh_title">National Center for Mental Health (NCMH) Crisis</string>
+    <string name="hotline_ncmh_detail">Hotline: Dial 1553 (toll-free) or 1800-1888-1553.</string>
+    <string name="hotline_hopeline_title">Hopeline</string>
+    <string name="hotline_hopeline_detail">Hotline: (02) 8804-4673, 0918-878-4673 Globe, dial the toll-free code 2919.</string>
+    <string name="hotline_touch_title">Touch Community Services Crisis Lines</string>
+    <string name="hotline_touch_detail">Hotline: (02) 8893-7603 and 0922-893-8944 (Sun).</string>
+
+    <!-- VIDEOS -->
+    <string name="videos_header">Hope of Motion</string>
+    <string name="videos_caption">"Take this time to focus on yourself—you deserve peace and healing."</string>
+    <string name="videos_card1_title">World Mental Health Day</string>
+    <string name="videos_card2_title">Mental Health Benefits of Running</string>
+    <string name="videos_card3_title">Emotional Well-Being</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_handshake">Handshake illustration</string>
+    <string name="cd_happy">Happy emoji</string>
+    <string name="cd_sad">Sad emoji</string>
+    <string name="cd_pressured">Pressured emoji</string>
+    <string name="cd_angry">Angry emoji</string>
+    <string name="cd_microphone">Record voice</string>
+    <string name="cd_upload">Upload attachment</string>
+    <string name="cd_sent">Sent indicator</string>
+    <string name="cd_ribbon">Ribbon icon</string>
+    <string name="cd_inspirational">Inspirational image</string>
+    <string name="cd_prev">Previous</string>
+    <string name="cd_next">Next</string>
+    <string name="cd_like">Like</string>
+    <string name="cd_hotline_header">Hotline icon</string>
+    <string name="cd_email">Email</string>
+    <string name="cd_phone">Phone</string>
+    <string name="cd_head">Head icon</string>
+    <string name="cd_jar">Jar icon</string>
+    <string name="cd_relieved">Relieved emoji</string>
+    <string name="cd_loved">Loved emoji</string>
+    <string name="cd_video_header">Video header icon</string>
+    <string name="cd_video_thumb_1">Video thumbnail 1</string>
+    <string name="cd_video_thumb_2">Video thumbnail 2</string>
+    <string name="cd_video_thumb_3">Video thumbnail 3</string>
+    <string name="cd_video_play">Play button</string>
+
+    <!-- LOGIN -->
+    <string name="app_tagline">YOUR EMOTIONS MATTER</string>
+    <string name="login_username">User Name</string>
+    <string name="login_password">Password</string>
+    <string name="login_hint_username">Enter username</string>
+    <string name="login_hint_password">Enter password</string>
+    <string name="login_remember_me">Remember Me</string>
+    <string name="login_button">Login</string>
+    <string name="login_or_register_with">Or Register With</string>
+    <string name="login_forgot_password">Forgot Password?</string>
+    <string name="cd_google">Register with Google</string>
+    <string name="cd_facebook">Register with Facebook</string>
+    <string name="cd_twitter">Register with Twitter</string>
+
 </resources>

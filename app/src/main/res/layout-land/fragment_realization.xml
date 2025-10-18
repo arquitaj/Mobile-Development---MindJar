@@ -6,63 +6,64 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
+    android:scrollbars="vertical"
+    android:overScrollMode="always"
+    android:isScrollContainer="true"
+    android:clipToPadding="false"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
     tools:context=".RealizationFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Guidelines -->
+        <!-- side rails + thirds split for header row -->
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/verticalConstraint1"
+            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             app:layout_constraintGuide_percent="0.10"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/verticalConstraint2"
+            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             app:layout_constraintGuide_percent="0.90"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/verticalConstraint3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.35"/>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/horizontalConstraint1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.04"/>
+            app:layout_constraintGuide_percent="0.37"/>
 
-        <!-- Header -->
+        <!-- header -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/verticalConstraint1"
+            app:layout_constraintEnd_toStartOf="@id/verticalConstraint2"
+            app:layout_constraintWidth_max="900dp"
             app:cardUseCompatPadding="true"
             app:cardCornerRadius="8dp"
-            app:cardElevation="2dp"
-            app:layout_constraintTop_toTopOf="@id/horizontalConstraint1"
-            app:layout_constraintStart_toStartOf="@id/verticalConstraint1"
-            app:layout_constraintEnd_toStartOf="@id/verticalConstraint2">
+            app:cardElevation="2dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="88dp"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:padding="12dp">
+                android:padding="16dp">
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="93dp"
+                    android:layout_width="72dp"
                     android:layout_height="match_parent"
                     android:scaleType="centerInside"
                     android:src="@drawable/head"
@@ -75,32 +76,36 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/realization_header"
-                    android:textSize="30sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <!-- left jar + right calendar -->
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="0dp"
-            android:layout_height="131dp"
-            android:layout_marginTop="24dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerInside"
             android:src="@drawable/jar_icon"
             android:contentDescription="@string/cd_jar"
-            app:layout_constraintTop_toBottomOf="@id/cardView"
             app:layout_constraintStart_toStartOf="@id/verticalConstraint1"
-            app:layout_constraintEnd_toStartOf="@id/verticalConstraint3" />
+            app:layout_constraintEnd_toStartOf="@id/verticalConstraint3"
+            app:layout_constraintTop_toBottomOf="@id/cardView"
+            app:layout_constraintWidth_max="900dp" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:text="@string/realization_calendar"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/cardView"
             app:layout_constraintStart_toStartOf="@id/verticalConstraint3"
-            app:layout_constraintEnd_toStartOf="@id/verticalConstraint2" />
+            app:layout_constraintEnd_toStartOf="@id/verticalConstraint2"
+            app:layout_constraintTop_toBottomOf="@id/cardView"
+            app:layout_constraintWidth_max="900dp" />
 
         <Button
             android:id="@+id/button"
@@ -108,22 +113,23 @@
             android:layout_height="46dp"
             android:layout_marginTop="8dp"
             android:text="@string/realization_my_journey"
-            app:layout_constraintTop_toBottomOf="@id/textView6"
             app:layout_constraintStart_toStartOf="@id/verticalConstraint3"
-            app:layout_constraintEnd_toStartOf="@id/verticalConstraint2" />
+            app:layout_constraintEnd_toStartOf="@id/verticalConstraint2"
+            app:layout_constraintTop_toBottomOf="@id/textView6" />
 
         <TextView
             android:id="@+id/textView10"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:text="@string/realization_weekly_inspiration"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/imageView2"
             app:layout_constraintStart_toStartOf="@id/verticalConstraint1"
-            app:layout_constraintEnd_toStartOf="@id/verticalConstraint2" />
+            app:layout_constraintEnd_toStartOf="@id/verticalConstraint2"
+            app:layout_constraintTop_toBottomOf="@id/imageView2"
+            app:layout_constraintWidth_max="900dp" />
 
-        <!-- Card 1 -->
+        <!-- weekly cards -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardContent1"
             android:layout_width="0dp"
@@ -131,9 +137,10 @@
             android:layout_marginTop="12dp"
             app:cardCornerRadius="8dp"
             app:cardUseCompatPadding="true"
-            app:layout_constraintTop_toBottomOf="@id/textView10"
             app:layout_constraintStart_toStartOf="@id/verticalConstraint1"
-            app:layout_constraintEnd_toStartOf="@id/verticalConstraint2">
+            app:layout_constraintEnd_toStartOf="@id/verticalConstraint2"
+            app:layout_constraintTop_toBottomOf="@id/textView10"
+            app:layout_constraintWidth_max="900dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -172,7 +179,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Card 2 -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardContent2"
             android:layout_width="0dp"
@@ -180,9 +186,10 @@
             android:layout_marginTop="12dp"
             app:cardCornerRadius="8dp"
             app:cardUseCompatPadding="true"
-            app:layout_constraintTop_toBottomOf="@id/cardContent1"
             app:layout_constraintStart_toStartOf="@id/verticalConstraint1"
-            app:layout_constraintEnd_toStartOf="@id/verticalConstraint2">
+            app:layout_constraintEnd_toStartOf="@id/verticalConstraint2"
+            app:layout_constraintTop_toBottomOf="@id/cardContent1"
+            app:layout_constraintWidth_max="900dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -221,7 +228,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Card 3 -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardContent3"
             android:layout_width="0dp"
@@ -229,9 +235,10 @@
             android:layout_marginTop="12dp"
             app:cardCornerRadius="8dp"
             app:cardUseCompatPadding="true"
-            app:layout_constraintTop_toBottomOf="@id/cardContent2"
             app:layout_constraintStart_toStartOf="@id/verticalConstraint1"
-            app:layout_constraintEnd_toStartOf="@id/verticalConstraint2">
+            app:layout_constraintEnd_toStartOf="@id/verticalConstraint2"
+            app:layout_constraintTop_toBottomOf="@id/cardContent2"
+            app:layout_constraintWidth_max="900dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -270,7 +277,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Card 4 -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardContent4"
             android:layout_width="0dp"
@@ -279,10 +285,11 @@
             android:layout_marginBottom="16dp"
             app:cardCornerRadius="8dp"
             app:cardUseCompatPadding="true"
-            app:layout_constraintTop_toBottomOf="@id/cardContent3"
             app:layout_constraintStart_toStartOf="@id/verticalConstraint1"
             app:layout_constraintEnd_toStartOf="@id/verticalConstraint2"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/cardContent3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintWidth_max="900dp">
 
             <LinearLayout
                 android:layout_width="match_parent"

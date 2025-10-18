@@ -6,79 +6,110 @@ import android.view.View;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-public class Dashboard extends AppCompatActivity implements View.OnClickListener{
-    ImageView homeIcon, realizationIcon, hopeIcon, videosIcon, hotlineIcon;
+public class Dashboard extends AppCompatActivity implements View.OnClickListener {
+
+    private static final String KEY_SELECTED_ICON_ID = "selected_icon_id";
+
+    private ImageView homeIcon, realizationIcon, hopeIcon, videosIcon, hotlineIcon;
+    private int selectedIconId = 0;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_dashboard);
 
-        //Accessing for fragment home as default
-        accessFragments(new HomeFragment());
-
-
-        //For the icons in the menu bar Item
+        // find views
         homeIcon = findViewById(R.id.homeIcon);
         realizationIcon = findViewById(R.id.realizationIcon);
         hopeIcon = findViewById(R.id.hopeIcon);
         videosIcon = findViewById(R.id.videosIcon);
         hotlineIcon = findViewById(R.id.hotlineIcon);
 
-        homeIcon.setOnClickListener((View.OnClickListener) this);
-        realizationIcon.setOnClickListener((View.OnClickListener) this);
-        hopeIcon.setOnClickListener((View.OnClickListener) this);
-        videosIcon.setOnClickListener((View.OnClickListener) this);
-        hotlineIcon.setOnClickListener((View.OnClickListener) this);
+        homeIcon.setOnClickListener(this);
+        realizationIcon.setOnClickListener(this);
+        hopeIcon.setOnClickListener(this);
+        videosIcon.setOnClickListener(this);
+        hotlineIcon.setOnClickListener(this);
+
+        if (savedInstanceState == null) {
+            selectedIconId = R.id.homeIcon;
+            accessFragments(new HomeFragment());
+            tintSelection(homeIcon);
+        } else {
+            selectedIconId = savedInstanceState.getInt(KEY_SELECTED_ICON_ID, R.id.homeIcon);
+            View v = findViewById(selectedIconId);
+            if (v != null) changeColorIcon(v);
+        }
     }
 
-    public void onClick(View v){
-        if(v.getId() == R.id.homeIcon || v.getId() == R.id.realizationIcon || v.getId() == R.id.hopeIcon ||
-                v.getId() == R.id.videosIcon || v.getId() == R.id.hotlineIcon){
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(KEY_SELECTED_ICON_ID, selectedIconId);
+    }
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        if (id == R.id.homeIcon || id == R.id.realizationIcon || id == R.id.hopeIcon
+                || id == R.id.videosIcon || id == R.id.hotlineIcon) {
             changeColorIcon(v);
         }
     }
 
-    public void changeColorIcon(View v){
-        // Set all Icon to black color
-        homeIcon.setColorFilter(getResources().getColor(R.color.black));
-        realizationIcon.setColorFilter(getResources().getColor(R.color.black));
-        hopeIcon.setColorFilter(getResources().getColor(R.color.black));
-        videosIcon.setColorFilter(getResources().getColor(R.color.black));
-        hotlineIcon.setColorFilter(getResources().getColor(R.color.black));
+    private void changeColorIcon(View v) {
+        // reset all to black
+        int black = ContextCompat.getColor(this, R.color.black);
+        homeIcon.setColorFilter(black);
+        realizationIcon.setColorFilter(black);
+        hopeIcon.setColorFilter(black);
+        videosIcon.setColorFilter(black);
+        hotlineIcon.setColorFilter(black);
 
-        // To change color of the icons
-        if(v.getId() == R.id.homeIcon){
+        int active = Color.parseColor("#73903F");
+        selectedIconId = v.getId();
+
+        if (v.getId() == R.id.homeIcon) {
             accessFragments(new HomeFragment());
-            homeIcon.setColorFilter(Color.parseColor("#73903F"));
-        }else if(v.getId() == R.id.realizationIcon){
+            homeIcon.setColorFilter(active);
+        } else if (v.getId() == R.id.realizationIcon) {
             accessFragments(new RealizationFragment());
-            realizationIcon.setColorFilter(Color.parseColor("#73903F"));
-        }else if(v.getId() == R.id.hopeIcon){
+            realizationIcon.setColorFilter(active);
+        } else if (v.getId() == R.id.hopeIcon) {
             accessFragments(new HopeFragment());
-            hopeIcon.setColorFilter(Color.parseColor("#73903F"));
-        }else if(v.getId() == R.id.videosIcon){
+            hopeIcon.setColorFilter(active);
+        } else if (v.getId() == R.id.videosIcon) {
             accessFragments(new VideosFragment());
-            videosIcon.setColorFilter(Color.parseColor("#73903F"));
-        }else if(v.getId() == R.id.hotlineIcon){
+            videosIcon.setColorFilter(active);
+        } else if (v.getId() == R.id.hotlineIcon) {
             accessFragments(new HotlineFragment());
-            hotlineIcon.setColorFilter(Color.parseColor("#73903F"));
+            hotlineIcon.setColorFilter(active);
         }
     }
-    private void accessFragments(Fragment fragment) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragmentContainerView2, fragment);
-        fragmentTransaction.commit();
+
+    private void tintSelection(ImageView iv) {
+        int black = ContextCompat.getColor(this, R.color.black);
+        homeIcon.setColorFilter(black);
+        realizationIcon.setColorFilter(black);
+        hopeIcon.setColorFilter(black);
+        videosIcon.setColorFilter(black);
+        hotlineIcon.setColorFilter(black);
+        iv.setColorFilter(Color.parseColor("#73903F"));
     }
 
+    private void accessFragments(Fragment fragment) {
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction tx = fm.beginTransaction();
+        tx.replace(R.id.fragmentContainerView2, fragment);
+        tx.commit();
+    }
 }

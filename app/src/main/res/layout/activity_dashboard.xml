@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,154 +8,147 @@
     android:layout_height="match_parent"
     tools:context=".Dashboard">
 
-<!--    Horizontal Constraints -->
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horizontalConstraint1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_end="120dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horizontalConstraint2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.94" />
-
-<!--    Vertical Constraints -->
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/verticalConstraint1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.20"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/verticalConstraint2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.40"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/verticalConstraint3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.60"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/verticalConstraint4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.80"/>
-
-
-    <ImageView
-        android:id="@+id/homeIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@+id/verticalConstraint1"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/horizontalConstraint1"
-        app:srcCompat="@drawable/home" />
-
-    <ImageView
-        android:id="@+id/realizationIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@+id/verticalConstraint2"
-        app:layout_constraintStart_toStartOf="@+id/verticalConstraint1"
-        app:layout_constraintTop_toTopOf="@+id/horizontalConstraint1"
-        app:srcCompat="@drawable/head" />
-
-    <ImageView
-        android:id="@+id/hopeIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@+id/verticalConstraint3"
-        app:layout_constraintStart_toStartOf="@+id/verticalConstraint2"
-        app:layout_constraintTop_toTopOf="@+id/horizontalConstraint1"
-        app:srcCompat="@drawable/ribbon"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/videosIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@+id/verticalConstraint4"
-
-        app:layout_constraintStart_toStartOf="@+id/verticalConstraint3"
-        app:layout_constraintTop_toTopOf="@+id/horizontalConstraint1"
-        app:srcCompat="@drawable/video" />
-
-    <ImageView
-        android:id="@+id/hotlineIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/verticalConstraint4"
-        app:layout_constraintTop_toTopOf="@+id/horizontalConstraint1"
-        app:srcCompat="@drawable/hotline" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalConstraint2"
-        app:layout_constraintEnd_toStartOf="@+id/verticalConstraint1"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Realization"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalConstraint2"
-        app:layout_constraintEnd_toStartOf="@+id/verticalConstraint2"
-        app:layout_constraintStart_toStartOf="@+id/verticalConstraint1" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hope"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalConstraint2"
-        app:layout_constraintEnd_toStartOf="@+id/verticalConstraint3"
-        app:layout_constraintStart_toStartOf="@+id/verticalConstraint2" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Videos"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalConstraint2"
-        app:layout_constraintEnd_toStartOf="@+id/verticalConstraint4"
-        app:layout_constraintStart_toStartOf="@+id/verticalConstraint3" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hotline"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalConstraint2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/verticalConstraint4" />
-
+    <!-- The fragment fills everything above the bottom nav -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView2"
         android:name="com.example.myapplication.HomeFragment"
-        android:layout_width="389dp"
-        android:layout_height="702dp"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalConstraint1"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="FragmentTagUsage" />
 
+    <!-- Bottom navigation bar (always at the bottom) -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="12dp"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- 1: Home -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/homeIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/cd_home_icon"
+                app:tint="@color/black"
+                app:srcCompat="@drawable/home" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_home"/>
+        </LinearLayout>
+
+        <!-- 2: Realization -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/realizationIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/cd_realization_icon"
+                app:tint="@color/black"
+                app:srcCompat="@drawable/head" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_realization"/>
+        </LinearLayout>
+
+        <!-- 3: Hope -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/hopeIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/cd_hope_icon"
+                app:tint="@color/black"
+                app:srcCompat="@drawable/ribbon" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_hope"/>
+        </LinearLayout>
+
+        <!-- 4: Videos -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/videosIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/cd_videos_icon"
+                app:tint="@color/black"
+                app:srcCompat="@drawable/video" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_videos"/>
+        </LinearLayout>
+
+        <!-- 5: Hotline -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/hotlineIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/cd_hotline_icon"
+                app:tint="@color/black"
+                app:srcCompat="@drawable/hotline" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_hotline"/>
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
