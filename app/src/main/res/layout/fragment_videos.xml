@@ -120,7 +120,7 @@
                         android:contentDescription="@string/cd_video_thumb_1"/>
 
                     <ImageView
-                        android:id="@+id/imageView13"
+                        android:id="@+id/youtubeIcon1"
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:layout_gravity="center"
@@ -170,7 +170,7 @@
                         android:contentDescription="@string/cd_video_thumb_2"/>
 
                     <ImageView
-                        android:id="@+id/imageView2"
+                        android:id="@+id/youtubeIcon2"
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:layout_gravity="center"
@@ -222,7 +222,7 @@
                         android:contentDescription="@string/cd_video_thumb_3"/>
 
                     <ImageView
-                        android:id="@+id/imageView5"
+                        android:id="@+id/youtubeIcon3"
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:layout_gravity="center"

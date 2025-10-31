@@ -105,7 +105,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:background="#C5D8A4"
                 android:scaleType="centerInside"
                 android:src="@drawable/slightly_happy"
                 android:contentDescription="@string/cd_happy"/>
@@ -116,7 +115,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:background="#CBE2FF"
                 android:scaleType="centerInside"
                 android:src="@drawable/sad"
                 android:contentDescription="@string/cd_sad"/>
@@ -127,7 +125,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:background="#FFC96B"
                 android:scaleType="centerInside"
                 android:src="@drawable/scrunched_eyes"
                 android:contentDescription="@string/cd_pressured"/>
@@ -138,7 +135,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:background="#F3746B"
                 android:scaleType="centerInside"
                 android:src="@drawable/rage"
                 android:contentDescription="@string/cd_angry"/>
@@ -220,6 +216,7 @@
             app:layout_constraintEnd_toStartOf="@id/verticalConstraint2">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputFeeling"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minLines="4"
